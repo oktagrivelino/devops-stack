@@ -5,27 +5,9 @@ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.15.2/confi
 Kemudian buat 1 file lagi dengan tujuan memasukkan range ip address yang nantinya akan digunakan, karena secara default untuk installasi metallb diatas hanya membuat listener dan speaker saja.
 Sehingga butuh dilakukan pembuatan ip pool range yang dapat digunakan.
 
-Buat file yaml dengan nama "ipaddresspool.yaml" yang berisikan yaml berikut ini :
+Buat file yaml dengan nama "ipaddresspool.yaml" yang berisikan yaml pada seperti pada ipaddresspool.yaml didalam folder ini.
 
-apiVersion: metallb.io/v1beta1
-kind: IPAddressPool
-metadata:
-  name: default-pool
-  namespace: metallb-system
-spec:
-  addresses:
-  - 192.168.1.240-192.168.1.250
-
-Kedua buat file yaml dengan nama "l2advertisement.yaml" yang berisikan yaml berikut ini :
-
-apiVersion: metallb.io/v1beta1
-kind: L2Advertisement
-metadata:
-  name: default
-  namespace: metallb-system
-spec:
-  ipAddressPools:
-  - default-pool
+Kedua buat file yaml dengan nama "l2advertisement.yaml" yang berisikan yaml pada seperti pada l2advertisement.yaml didalam folder ini.
 
 Setelah itu apply kedua file tersebut 
 
