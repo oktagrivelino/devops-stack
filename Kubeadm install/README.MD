@@ -33,7 +33,7 @@ Apabila saat pertama kali menjalan command "kubectl" terdapat error message sepe
 Lakukan beberapa langkah berikut :
 
 pastikan user sebagai ubuntu atau user biasa
-1. mkdir -P $HOME/.kube
+1. mkdir -p $HOME/.kube
 2. sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 3. sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
