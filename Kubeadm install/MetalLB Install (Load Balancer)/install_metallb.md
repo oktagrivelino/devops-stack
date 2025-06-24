@@ -17,6 +17,8 @@ kubectl apply -f l2advertisement.yaml
 Setelah berhasil, selanjutnya dapat kita coba untuk membuat sebuah deployment dan mengekspose service dari deployment tersebut menggunakan service type LoadBalancer
 
 kubectl create deployment hello-server --image=gcr.io/google-samples/hello-app:1.0
+
+
 kubectl expose deployment hello-server --type LoadBalancer --port 80 --target-port 8080
 
 Kemudian cek menggunakan command kubectl get service <nama_deployment> [Name_Space jika menggunakan namespace tertentu]
